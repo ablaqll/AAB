@@ -1,0 +1,510 @@
+/* 1. Общие требования и сброс */
+:root {
+    --text-color: #1a1a1a;
+    --bg-color: #ffffff;
+    --accent-color: #2b6cb0; /* Строгий синий */
+    --accent-hover: #2c5282;
+    --light-gray: #f7f7f7;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+    --max-width: 1200px;
+    --header-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+.btn-header {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-header:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* 2.1 Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+/* 2.2 Hero-блок */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-color: #333; /* Fallback */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><rect width="100" height="100" fill="%23555"/><path d="M0 100 L100 0" stroke="%23777" stroke-width="0.5"/></svg>'); /* Placeholder pattern */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* 2.3 О компании */
+.about {
+    background-color: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-left p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+}
+
+.about-list {
+    margin-top: 10px;
+}
+
+.about-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.about-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 2px; /* Slight round for aesthetics, could be square */
+}
+
+/* 2.4 Услуги */
+.services {
+    background-color: var(--light-gray);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-gray);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    /* Placeholder for icon */
+    position: relative;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: auto; /* Push to bottom if needed, but text is short */
+}
+
+/* 2.5 Проекты */
+.projects {
+    background-color: var(--white);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    cursor: pointer;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: #ddd;
+    margin-bottom: 15px;
+    /* Placeholder pattern */
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee), linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    opacity: 0.9;
+}
+
+.project-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 2.6 Контакты + CTA */
+.contacts {
+    background-color: var(--white);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.contact-item a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.contact-form {
+    background-color: var(--light-gray);
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* 2.7 Footer */
+.footer {
+    background-color: #1a1a1a;
+    color: var(--white);
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.footer-copyright {
+    color: #888;
+}
+
+.footer-contacts a {
+    margin-left: 20px;
+    color: #ccc;
+}
+
+.footer-contacts a:hover {
+    color: var(--white);
+}
+
+/* Адаптивная вёрстка */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 in a row on smaller desktops/tablets, then 2, then 1? Requirement says 5 elements. Grid of 5 fits best on wide. Let's adjust for tablet */
+        /* But requirement says "grid cards 5 elements", strict list. 5 columns on desktop. */
+    }
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .nav {
+        display: none; /* Mobile menu implementation not strictly requested but good practice. For now just hide nav items or stack them? "Fixed header" usually implies hamburger on mobile. Requirement: "Navigation: ...". I'll keep it simple for now or just stack if space allows. Let's hide and assume a simple mobile view for a basic static site without JS toggles requested explicitly. Or better: stack vertically in a real scenario, but for a 1-page often simple scroll. Let's make the header just show logo and CTA on mobile for simplicity, or small links. */
+    }
+    
+    .nav {
+        /* Simple fallback for mobile if no JS */
+        display: none; 
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-grid, .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-contacts a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
