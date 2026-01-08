@@ -383,31 +383,58 @@ a.project-card:hover .project-info {
     text-align: left;
 }
 
-/* Contacts Section - Redesigned */
+/* Contacts Section - Exact Baasgroup Copy */
 .contacts {
     background-color: #ffffff;
-    padding: 150px 0; /* Updated padding */
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.contacts-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.contacts-header h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.contacts-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 0;
 }
 
 .contacts-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.5fr 1fr; /* Form is wider like reference */
+    gap: 100px;
     align-items: start;
 }
 
-/* Left Column: Form */
-.contacts-form-clean .form-group {
-    margin-bottom: 16px;
+/* Form Styles - Precise Reference Match */
+.contacts-form-clean {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 .contacts-form-clean input,
 .contacts-form-clean select {
     width: 100%;
-    height: 48px;
-    padding: 0 12px;
-    border: 1px solid #CCCCCC;
-    background-color: #ffffff;
+    height: 60px; /* Taller inputs */
+    padding: 0 20px;
+    border: 1px solid #E5E5E5; /* Very light border */
+    background-color: #F9F9F9; /* Very light grey background */
     font-size: 1rem;
     color: var(--text-primary);
     border-radius: 0;
@@ -418,16 +445,17 @@ a.project-card:hover .project-info {
     appearance: none;
 }
 
+/* Specific Select Style */
 .contacts-form-clean select {
     cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
+    background-position: right 20px center;
+    background-size: 20px;
+    color: var(--text-primary);
 }
 
-.contacts-form-clean input::placeholder,
-.contacts-form-clean select:invalid {
+.contacts-form-clean input::placeholder {
     color: #999;
 }
 
@@ -436,23 +464,32 @@ a.project-card:hover .project-info {
     border-color: #000;
 }
 
-.contacts-form-clean .btn-submit {
+/* Submit Button - Arrow Style */
+.btn-submit-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #000000;
     color: #ffffff;
     border: none;
+    padding: 0 30px;
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 0;
+    margin-top: 10px;
 }
 
-.contacts-form-clean .btn-submit:hover {
+.btn-submit-arrow:hover {
     background-color: #333333;
+}
+
+.btn-submit-arrow span {
+    font-size: 1.2rem;
 }
 
 /* Right Column: Info & Map */
@@ -462,32 +499,46 @@ a.project-card:hover .project-info {
 }
 
 .contacts-details {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 30px; /* Increased gap */
+}
+
+.contact-row-large {
+    font-size: 1.8rem; /* Larger font for phone */
+    font-weight: 400;
+    color: var(--text-primary);
 }
 
 .contact-row {
-    font-size: 1.1rem; /* ~17.6px */
+    font-size: 1.1rem;
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.contact-row a {
+.contact-row a, .contact-row-large a {
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-row a:hover {
+.contact-row a:hover, .contact-row-large a:hover {
     color: var(--text-secondary);
+}
+
+.contacts-policy {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .contacts-map-embedded {
     width: 100%;
-    height: 350px;
+    height: 300px;
     background-color: #f0f0f0;
-    margin-bottom: 40px; /* Bottom margin as requested */
+    margin-top: 20px;
 }
 
 .contacts-map-embedded iframe {
