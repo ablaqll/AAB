@@ -387,7 +387,7 @@ a.project-card:hover .project-info {
 .contacts {
     background-color: #ffffff;
     padding-top: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 0; /* Removing bottom padding as map is full width below */
 }
 
 .contacts-header {
@@ -417,6 +417,7 @@ a.project-card:hover .project-info {
     grid-template-columns: 1.5fr 1fr; /* Form is wider like reference */
     gap: 100px;
     align-items: start;
+    margin-bottom: 100px; /* Space between form and map */
 }
 
 /* Form Styles - Precise Reference Match */
@@ -492,7 +493,7 @@ a.project-card:hover .project-info {
     font-size: 1.2rem;
 }
 
-/* Right Column: Info & Map */
+/* Right Column: Info */
 .contacts-info-col {
     display: flex;
     flex-direction: column;
@@ -534,18 +535,20 @@ a.project-card:hover .project-info {
     cursor: pointer;
 }
 
-.contacts-map-embedded {
+/* Full Width Map */
+.contacts-map-full {
     width: 100%;
-    height: 300px;
+    height: 500px;
     background-color: #f0f0f0;
-    margin-top: 20px;
+    margin-top: 0;
 }
 
-.contacts-map-embedded iframe {
+.contacts-map-full iframe {
     width: 100%;
     height: 100%;
     border: none;
     filter: grayscale(100%);
+    display: block;
 }
 
 /* Footer */
@@ -651,34 +654,78 @@ a.project-card:hover .project-info {
     .contacts-grid {
         grid-template-columns: 1fr;
         gap: 60px;
+        margin-bottom: 60px;
     }
     .project-title-large {
         font-size: 3rem;
     }
+    .container {
+        padding: 0 30px;
+    }
 }
 
 @media (max-width: 768px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+    
     .header {
         padding: 15px 0;
     }
     
+    .burger-menu {
+        display: block;
+    }
+    
     .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
         background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 999;
+    }
+    
+    .nav.active {
+        transform: translateX(0);
     }
     
     .nav-list {
+        flex-direction: column;
+        align-items: center;
         gap: 30px;
     }
     
     .nav-link {
-        color: var(--text-primary);
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
+    .btn-header {
+        display: none; /* Hide header button on mobile if it's in the way, or move to nav */
+    }
+    
+    /* Make hero responsive */
     .hero-content h1 {
         font-size: 2.5rem;
+        letter-spacing: 2px;
     }
     
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Services grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Projects grid */
     .projects-grid {
         grid-template-columns: 1fr;
         padding: 0;
@@ -686,18 +733,32 @@ a.project-card:hover .project-info {
 
     .project-info {
         opacity: 1; /* Show project info always on mobile */
-        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        padding: 20px;
     }
     
-    .contacts-map-embedded {
-        height: 250px;
+    .project-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Contacts map */
+    .contacts-map-full {
+        height: 350px;
     }
     
     .project-hero-image {
         height: 50vh;
+        margin-bottom: 40px;
     }
     
     .project-title-large {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    .project-description-text {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 20px;
     }
 }
