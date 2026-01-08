@@ -467,15 +467,15 @@ a.project-card:hover .project-info {
     border-color: var(--text-primary);
 }
 
-/* Contacts Map */
-.contacts-map-large {
+/* Contacts Map Full Width */
+.contacts-map-full {
     width: 100%;
-    height: 600px;
+    height: 700px; /* Increased height */
     background: #f0f0f0;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
-.contacts-map-large iframe {
+.contacts-map-full iframe {
     width: 100%;
     height: 100%;
     border: none;
@@ -632,7 +632,7 @@ a.project-card:hover .project-info {
         gap: 50px;
     }
     
-    .contacts-map-large {
+    .contacts-map-full {
         height: 300px;
     }
 
