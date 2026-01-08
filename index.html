@@ -209,45 +209,57 @@
     </section>
 
     <!-- Contacts Section -->
-    <section class="contacts section-padding" id="contacts">
+    <section class="contacts" id="contacts">
         <div class="container">
-            <h2 class="section-title text-left" style="margin-bottom: 40px;">Контакты</h2>
+            <div class="contacts-header">
+                <h2>Все фантастическое — реально.<br>Проверим?</h2>
+                <p>Оставьте заявку и мы с вами свяжемся</p>
+            </div>
             
-            <div class="contacts-wrapper">
+            <div class="contacts-grid">
                 <!-- Left Column: Form -->
-                <div class="contacts-form-column">
-                    <div class="contacts-form-clean">
-                        <form name="contact" method="POST" data-netlify="true">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Ваше имя" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Телефон" required>
-                            </div>
-                            <div class="form-group">
-                                <select name="service" required>
-                                    <option value="" disabled selected>Выберите услугу</option>
-                                    <option value="concept">Разработка концепций</option>
-                                    <option value="3d">3D визуализация</option>
-                                    <option value="project">Разработка эскизного и рабочего проекта</option>
-                                    <option value="construction">Строительно-монтажные работы</option>
-                                    <option value="supervision">Авторский и технический надзор</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn-submit">Отправить</button>
-                        </form>
-                    </div>
+                <div class="contacts-form-clean">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="" disabled selected>Выберите услугу</option>
+                                <option value="concept">Разработка концепций</option>
+                                <option value="3d">3D визуализация экстерьера и интерьера</option>
+                                <option value="project">Разработка эскизного и рабочего проекта</option>
+                                <option value="construction">Строительно-монтажные работы</option>
+                                <option value="supervision">Авторский и технический надзор</option>
+                                <option value="marketing">Маркетинг, продажи и продвижение</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Телефон" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit-arrow">
+                            ОТПРАВИТЬ <span>&rarr;</span>
+                        </button>
+                    </form>
                 </div>
 
                 <!-- Right Column: Info & Map -->
-                <div class="contacts-info-column">
+                <div class="contacts-info-col">
                     <div class="contacts-details">
-                        <p><a href="tel:+77765414958">+7 776 541 49 58</a></p>
-                        <p><a href="mailto:aab.project.kz@gmail.com">aab.project.kz@gmail.com</a></p>
-                        <p><a href="https://2gis.kz/almaty/geo/70000001100412222" target="_blank">г. Алматы, ул. Абая 76</a></p>
+                        <div class="contact-row-large">
+                            <a href="tel:+77765414958">+7 776 541 49 58</a>
+                        </div>
+                        <div class="contact-row">
+                            <a href="mailto:aab.project.kz@gmail.com">aab.project.kz@gmail.com</a>
+                        </div>
+                        <div class="contact-row">
+                            <a href="https://2gis.kz/almaty/geo/70000001100412222" target="_blank">г. Алматы, ул. Абая 76</a>
+                        </div>
                     </div>
+                    <div class="contacts-policy">Политика конфиденциальности</div>
                     
-                    <div class="contacts-map-small">
+                    <div class="contacts-map-embedded">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.776602058763!2d76.9090683154868!3d43.23514697913778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883693156260d0d%3A0x6a0487019702221!2z0L_RgNC-0YHQvy4g0JDQsdCw0Y8gNzYsINCQ0LvQvNCw0YLRiyAwNTAwMDAsINCa0LDQt9Cw0LDRhdGB0YLQsNC9!5e0!3m2!1sru!2skz!4v1683184654321!5m2!1sru!2skz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
