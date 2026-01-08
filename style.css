@@ -5,7 +5,7 @@
     --text-primary: #111111;
     --text-secondary: #555555;
     --accent: #111111;
-    --border-color: #e5e5e5;
+    --border-color: #cccccc;
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -39,7 +39,7 @@ img {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -50,7 +50,7 @@ img {
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
 .section-title {
@@ -328,9 +328,9 @@ img {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0; /* No gap */
+    gap: 0;
     align-items: start;
-    padding: 0; /* No padding */
+    padding: 0;
 }
 
 a.project-card {
@@ -341,11 +341,6 @@ a.project-card {
     overflow: hidden;
     aspect-ratio: 16/9;
     cursor: pointer;
-}
-
-/* Stagger Effect Removed */
-.projects-grid a.project-card:nth-child(even) {
-    margin-top: 0;
 }
 
 a.project-card img {
@@ -388,112 +383,118 @@ a.project-card:hover .project-info {
     text-align: left;
 }
 
-/* Contacts Section - Split Layout */
-.contacts-wrapper {
+/* Contacts Section - Redesigned */
+.contacts {
+    background-color: #ffffff;
+    padding: 150px 0; /* Updated padding */
+}
+
+.contacts-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 50/50 Split */
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Left Column: Form */
+.contacts-form-clean .form-group {
+    margin-bottom: 16px;
+}
+
+.contacts-form-clean input,
+.contacts-form-clean select {
     width: 100%;
-    max-width: 100%; /* Full width */
-}
-
-.contacts-info-column {
-    background-color: #fff;
-    padding: 100px 60px; /* Large padding for spacing */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-right: 1px solid var(--border-color);
-}
-
-.contacts-content {
-    max-width: 600px; /* Limit content width inside column */
-    margin: 0 auto;
-    width: 100%;
-}
-
-.contacts-info {
-    margin-bottom: 60px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.contact-item:last-child {
-    border-bottom: none;
-}
-
-.contact-item i {
-    font-size: 1.5rem;
+    height: 48px;
+    padding: 0 12px;
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+    font-size: 1rem;
     color: var(--text-primary);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-.contact-item h4 {
-    margin-bottom: 5px;
-    font-size: 0.8rem;
+.contacts-form-clean select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.contacts-form-clean input::placeholder,
+.contacts-form-clean select:invalid {
+    color: #999;
+}
+
+.contacts-form-clean input:focus,
+.contacts-form-clean select:focus {
+    border-color: #000;
+}
+
+.contacts-form-clean .btn-submit {
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0;
+}
+
+.contacts-form-clean .btn-submit:hover {
+    background-color: #333333;
+}
+
+/* Right Column: Info & Map */
+.contacts-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-details {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-row {
+    font-size: 1.1rem; /* ~17.6px */
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.contact-row a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-row a:hover {
     color: var(--text-secondary);
 }
 
-.contact-item a, .contact-item p {
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.contact-item a:hover {
-    color: #555;
-}
-
-/* Clean Form Style */
-.contacts-form-clean {
+.contacts-map-embedded {
     width: 100%;
+    height: 350px;
+    background-color: #f0f0f0;
+    margin-bottom: 40px; /* Bottom margin as requested */
 }
 
-.contacts-form-clean .form-group {
-    margin-bottom: 30px;
-}
-
-.contacts-form-clean input {
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    padding: 15px 0;
-    width: 100%;
-    background: transparent;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.contacts-form-clean input::placeholder {
-    color: #999;
-    font-size: 1rem;
-}
-
-.contacts-form-clean input:focus {
-    border-color: var(--text-primary);
-}
-
-/* Map Column */
-.contacts-map-column {
-    width: 100%;
-    height: 100%;
-    min-height: 800px; /* Make sure map is tall enough */
-    background: #f0f0f0;
-}
-
-.contacts-map-column iframe {
+.contacts-map-embedded iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: grayscale(100%) contrast(1.2);
+    filter: grayscale(100%);
 }
 
 /* Footer */
@@ -596,14 +597,9 @@ a.project-card:hover .project-info {
     .about-content {
         grid-template-columns: 1fr;
     }
-    .contacts-wrapper {
-        grid-template-columns: 1fr; /* Stack on tablet/mobile */
-    }
-    .contacts-info-column {
-        padding: 60px 40px;
-    }
-    .contacts-map-column {
-        min-height: 400px; /* Smaller map on mobile */
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
     }
     .project-title-large {
         font-size: 3rem;
@@ -642,8 +638,8 @@ a.project-card:hover .project-info {
         background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     }
     
-    .contacts-info-column {
-        padding: 40px 20px;
+    .contacts-map-embedded {
+        height: 250px;
     }
     
     .project-hero-image {
