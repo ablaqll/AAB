@@ -1,70 +1,69 @@
-/* Project Detail Page Styles */
+/* Project Detail Page Styles - Architectural Style */
+.project-page {
+    background-color: var(--bg-primary);
+}
+
 .project-detail-section {
-    padding-top: 140px; /* Space for fixed header */
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 100px;
 }
 
 .project-header-block {
     margin-bottom: 60px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    text-align: left;
 }
 
 .project-title-large {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Scaled for mobile/desktop */
     font-weight: 300;
     color: var(--text-primary);
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
     line-height: 1.2;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
 }
 
 .project-description-block {
-    max-width: 900px;
-    margin-bottom: 60px;
+    max-width: 800px;
+    margin-bottom: 80px;
 }
 
 .project-description-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #cccccc; /* Slightly lighter than secondary for readability */
-    white-space: pre-line; /* Preserves line breaks from user input */
+    color: var(--text-primary);
+    font-weight: 300;
+    white-space: pre-line; /* Preserves line breaks */
 }
 
+/* Vertical Gallery */
 .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Large spacing between images */
+    width: 100%;
 }
 
 .gallery-item {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    aspect-ratio: 16/10;
-    filter: grayscale(10%);
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.gallery-item:hover {
-    filter: grayscale(0%);
-    transform: scale(1.01);
-}
-
-/* Make Project Cards Clickable in Index */
-a.project-card {
     display: block;
-    text-decoration: none;
-    color: inherit;
+    object-fit: cover;
+    /* Optional: Max height to keep images from being too tall on huge screens? */
+    /* max-height: 90vh; */ 
 }
 
+/* Mobile Adjustments */
 @media (max-width: 768px) {
+    .project-detail-section {
+        padding-top: 100px;
+    }
     .project-title-large {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .project-gallery {
-        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
