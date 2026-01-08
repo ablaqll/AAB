@@ -275,6 +275,7 @@ img {
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
+    vertical-align: middle;
 }
 
 /* Services Section */
@@ -327,9 +328,9 @@ img {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 0; /* No gap */
     align-items: start;
-    padding: 0 20px;
+    padding: 0; /* No padding */
 }
 
 a.project-card {
@@ -342,9 +343,9 @@ a.project-card {
     cursor: pointer;
 }
 
-/* Stagger Effect for Projects */
+/* Stagger Effect Removed */
 .projects-grid a.project-card:nth-child(even) {
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 a.project-card img {
@@ -387,18 +388,31 @@ a.project-card:hover .project-info {
     text-align: left;
 }
 
-/* Contacts Section */
+/* Contacts Section - Split Layout */
 .contacts-wrapper {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1fr; /* 50/50 Split */
+    width: 100%;
+    max-width: 100%; /* Full width */
 }
 
-.contacts-header-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+.contacts-info-column {
+    background-color: #fff;
+    padding: 100px 60px; /* Large padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border-color);
+}
+
+.contacts-content {
+    max-width: 600px; /* Limit content width inside column */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contacts-info {
+    margin-bottom: 60px;
 }
 
 .contact-item {
@@ -467,19 +481,19 @@ a.project-card:hover .project-info {
     border-color: var(--text-primary);
 }
 
-/* Contacts Map Full Width */
-.contacts-map-full {
+/* Map Column */
+.contacts-map-column {
     width: 100%;
-    height: 700px; /* Increased height */
+    height: 100%;
+    min-height: 800px; /* Make sure map is tall enough */
     background: #f0f0f0;
-    margin-top: 60px;
 }
 
-.contacts-map-full iframe {
+.contacts-map-column iframe {
     width: 100%;
     height: 100%;
     border: none;
-    filter: grayscale(100%) contrast(1.2); /* Stylish B&W map */
+    filter: grayscale(100%) contrast(1.2);
 }
 
 /* Footer */
@@ -582,9 +596,14 @@ a.project-card:hover .project-info {
     .about-content {
         grid-template-columns: 1fr;
     }
-    .contacts-header-group {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .contacts-wrapper {
+        grid-template-columns: 1fr; /* Stack on tablet/mobile */
+    }
+    .contacts-info-column {
+        padding: 60px 40px;
+    }
+    .contacts-map-column {
+        min-height: 400px; /* Smaller map on mobile */
     }
     .project-title-large {
         font-size: 3rem;
@@ -615,12 +634,7 @@ a.project-card:hover .project-info {
     
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 20px;
-    }
-    
-    .projects-grid a.project-card:nth-child(even) {
-        margin-top: 0; /* Remove stagger on mobile */
+        padding: 0;
     }
 
     .project-info {
@@ -628,14 +642,10 @@ a.project-card:hover .project-info {
         background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     }
     
-    .contacts-wrapper {
-        gap: 50px;
+    .contacts-info-column {
+        padding: 40px 20px;
     }
     
-    .contacts-map-full {
-        height: 300px;
-    }
-
     .project-hero-image {
         height: 50vh;
     }
