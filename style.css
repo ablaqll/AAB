@@ -54,8 +54,8 @@ img {
 }
 
 .section-title {
-    font-size: 3rem; /* Increased size */
-    font-weight: 700; /* Bolder */
+    font-size: 3rem; 
+    font-weight: 700; 
     margin-bottom: 60px;
     text-align: center;
     color: var(--text-primary);
@@ -112,7 +112,7 @@ img {
 .header {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 20px 0;
+    padding: 12px 0; /* Reduced padding for header height reduction */
     position: fixed;
     top: 0;
     left: 0;
@@ -125,6 +125,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px; /* Force height constraint */
 }
 
 .logo {
@@ -134,10 +135,11 @@ img {
 }
 
 .logo img {
-    height: 120px; /* Increased size */
+    height: 100px; /* Slightly reduced to fit header but still large */
     width: auto;
     filter: none;
     display: block;
+    object-fit: contain;
 }
 
 .nav-list {
@@ -147,8 +149,8 @@ img {
 
 .nav-link {
     color: var(--text-primary);
-    font-weight: 700; /* Bolder */
-    font-size: 1rem; /* Larger */
+    font-weight: 700;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -172,13 +174,21 @@ img {
 
 .header-socials {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 .social-icon {
     color: var(--text-primary);
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased size by ~100% from base */
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon i {
+    transform: scale(1.5); /* Explicit scaling for icon content */
 }
 
 .social-icon:hover {
@@ -234,11 +244,11 @@ img {
 
 .hero-content .subtitle {
     font-size: 1.5rem;
-    font-weight: 600; /* Bolder */
+    font-weight: 600;
     margin-bottom: 40px;
     letter-spacing: 2px;
-    color: var(--text-primary); /* Darker */
-    font-style: normal; /* Not italic */
+    color: var(--text-primary);
+    font-style: normal;
 }
 
 /* About Section */
@@ -288,42 +298,68 @@ img {
 /* Services Section */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr; /* Single column full width */
+    gap: 0; /* Remove gaps for seamless look if desired, or keep specific gap */
 }
 
+/* Full Width Service Item Style (List View) */
 .service-card {
     background: #ffffff;
     padding: 40px;
-    border: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color); /* Separator lines */
+    border-top: none;
+    border-left: none;
+    border-right: none;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer; /* Interaction hint */
+}
+
+.service-card:first-child {
+    border-top: 1px solid var(--border-color);
 }
 
 .service-card:hover {
-    border-color: var(--text-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background-color: #f9f9f9;
+    padding-left: 60px; /* Slide effect */
 }
 
 .service-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 25px;
+    margin-bottom: 0;
+    margin-right: 30px;
+    width: 50px;
+    text-align: center;
+}
+
+.service-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .service-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 0;
     text-transform: uppercase;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
+    flex: 1;
 }
 
 .service-card p {
     font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    flex: 1;
+    text-align: right;
+    display: none; /* Hide description for strict list look or show if preferred */
 }
 
 /* Projects Section - Main Page */
@@ -381,7 +417,7 @@ a.project-card:hover .project-info {
 
 .project-info h3 {
     font-size: 1.8rem;
-    font-weight: 700; /* Bolder */
+    font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -390,11 +426,11 @@ a.project-card:hover .project-info {
     text-align: left;
 }
 
-/* Contacts Section - Exact Baasgroup Copy */
+/* Contacts Section - Combined & Clean */
 .contacts {
     background-color: #ffffff;
     padding-top: 150px;
-    padding-bottom: 0; /* Removing bottom padding as map is full width below */
+    padding-bottom: 0;
 }
 
 .contacts-header {
@@ -421,13 +457,12 @@ a.project-card:hover .project-info {
 
 .contacts-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Form is wider like reference */
+    grid-template-columns: 1.5fr 1fr;
     gap: 100px;
     align-items: start;
-    margin-bottom: 100px; /* Space between form and map */
+    margin-bottom: 80px;
 }
 
-/* Form Styles - Precise Reference Match */
 .contacts-form-clean {
     width: 100%;
 }
@@ -439,10 +474,10 @@ a.project-card:hover .project-info {
 .contacts-form-clean input,
 .contacts-form-clean select {
     width: 100%;
-    height: 60px; /* Taller inputs */
+    height: 60px;
     padding: 0 20px;
-    border: 1px solid #E5E5E5; /* Very light border */
-    background-color: #F9F9F9; /* Very light grey background */
+    border: 1px solid #E5E5E5;
+    background-color: #F9F9F9;
     font-size: 1rem;
     color: var(--text-primary);
     border-radius: 0;
@@ -453,7 +488,6 @@ a.project-card:hover .project-info {
     appearance: none;
 }
 
-/* Specific Select Style */
 .contacts-form-clean select {
     cursor: pointer;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -472,7 +506,6 @@ a.project-card:hover .project-info {
     border-color: #000;
 }
 
-/* Submit Button - Arrow Style */
 .btn-submit-arrow {
     display: inline-flex;
     align-items: center;
@@ -500,7 +533,6 @@ a.project-card:hover .project-info {
     font-size: 1.2rem;
 }
 
-/* Right Column: Info */
 .contacts-info-col {
     display: flex;
     flex-direction: column;
@@ -510,11 +542,11 @@ a.project-card:hover .project-info {
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Increased gap */
+    gap: 30px;
 }
 
 .contact-row-large {
-    font-size: 1.8rem; /* Larger font for phone */
+    font-size: 1.8rem;
     font-weight: 400;
     color: var(--text-primary);
 }
@@ -542,12 +574,13 @@ a.project-card:hover .project-info {
     cursor: pointer;
 }
 
-/* Full Width Map */
 .contacts-map-full {
     width: 100%;
     height: 500px;
     background-color: #f0f0f0;
     margin-top: 0;
+    margin-bottom: 0;
+    display: block; /* Ensure visibility */
 }
 
 .contacts-map-full iframe {
@@ -565,6 +598,7 @@ a.project-card:hover .project-info {
     padding: 60px 0;
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
+    margin-top: 0; /* Remove top margin if any */
 }
 
 .footer-content {
@@ -682,11 +716,15 @@ a.project-card:hover .project-info {
     }
     
     .header {
-        padding: 15px 0;
+        padding: 10px 0; /* Minimal padding on mobile */
+    }
+    
+    .header-container {
+        height: 60px;
     }
     
     .logo img {
-        height: 80px;
+        height: 50px; /* Smaller logo on mobile */
     }
 
     .burger-menu {
@@ -723,11 +761,11 @@ a.project-card:hover .project-info {
     }
     
     .btn-header {
-        display: none; /* Hide header button on mobile if it's in the way, or move to nav */
+        display: none; 
     }
     
     .header-socials {
-        display: none; /* Hide in header on mobile if burger is used, or put in menu */
+        display: none; 
     }
 
     /* Make hero responsive */
@@ -745,6 +783,20 @@ a.project-card:hover .project-info {
         grid-template-columns: 1fr;
     }
     
+    .service-card {
+        padding: 20px;
+        flex-direction: row; /* Keep row direction if possible */
+        align-items: center;
+    }
+
+    .service-icon {
+        margin-right: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+    }
+
     /* Projects grid */
     .projects-grid {
         grid-template-columns: 1fr;
@@ -752,7 +804,7 @@ a.project-card:hover .project-info {
     }
 
     .project-info {
-        opacity: 1; /* Show project info always on mobile */
+        opacity: 1; 
         padding: 20px;
     }
     
