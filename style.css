@@ -54,8 +54,8 @@ img {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 400;
+    font-size: 3rem; /* Increased size */
+    font-weight: 700; /* Bolder */
     margin-bottom: 60px;
     text-align: center;
     color: var(--text-primary);
@@ -134,7 +134,7 @@ img {
 }
 
 .logo img {
-    height: 60px;
+    height: 120px; /* Increased size */
     width: auto;
     filter: none;
     display: block;
@@ -147,8 +147,8 @@ img {
 
 .nav-link {
     color: var(--text-primary);
-    font-weight: 500;
-    font-size: 0.85rem;
+    font-weight: 700; /* Bolder */
+    font-size: 1rem; /* Larger */
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -170,15 +170,19 @@ img {
     width: 100%;
 }
 
-.btn-header {
-    padding: 12px 25px;
-    font-size: 0.75rem;
-    border: 1px solid var(--text-primary);
+.header-socials {
+    display: flex;
+    gap: 15px;
 }
 
-.btn-header:hover {
-    background-color: var(--text-primary);
-    color: #ffffff;
+.social-icon {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #555;
 }
 
 .burger-menu {
@@ -213,6 +217,9 @@ img {
 .hero-content {
     max-width: 1000px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-content h1 {
@@ -227,11 +234,11 @@ img {
 
 .hero-content .subtitle {
     font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 0;
+    font-weight: 600; /* Bolder */
+    margin-bottom: 40px;
     letter-spacing: 2px;
-    color: var(--text-secondary);
-    font-style: italic;
+    color: var(--text-primary); /* Darker */
+    font-style: normal; /* Not italic */
 }
 
 /* About Section */
@@ -374,7 +381,7 @@ a.project-card:hover .project-info {
 
 .project-info h3 {
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 700; /* Bolder */
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -573,6 +580,11 @@ a.project-card:hover .project-info {
     letter-spacing: 2px;
 }
 
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
 /* Project Detail Page Styles */
 .project-page {
     background-color: var(--bg-primary);
@@ -673,6 +685,10 @@ a.project-card:hover .project-info {
         padding: 15px 0;
     }
     
+    .logo img {
+        height: 80px;
+    }
+
     .burger-menu {
         display: block;
     }
@@ -710,6 +726,10 @@ a.project-card:hover .project-info {
         display: none; /* Hide header button on mobile if it's in the way, or move to nav */
     }
     
+    .header-socials {
+        display: none; /* Hide in header on mobile if burger is used, or put in menu */
+    }
+
     /* Make hero responsive */
     .hero-content h1 {
         font-size: 2.5rem;
