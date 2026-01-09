@@ -764,10 +764,12 @@ a.project-card:hover .project-info {
     .hero-content h1 {
         font-size: 2.5rem;
         letter-spacing: 2px;
+        line-height: 1.2; /* Better line height for mobile */
     }
     
     .hero-content .subtitle {
         font-size: 1rem;
+        padding: 0 10px; /* Slight padding for subtitle */
     }
     
     /* About section mobile fix */
@@ -787,12 +789,22 @@ a.project-card:hover .project-info {
     }
     .service-card {
         border-right: none;
+        padding: 40px 20px; /* Reduce padding inside cards */
+    }
+    
+    /* Reset container padding for full-width look where needed */
+    .services-section .container-fluid {
+        padding: 0;
     }
 
     /* Projects grid */
     .projects-grid {
         grid-template-columns: 1fr;
         padding: 0;
+    }
+    
+    #projects .container {
+        padding: 0; /* Ensure projects container is full width */
     }
 
     .project-info {
@@ -820,8 +832,11 @@ a.project-card:hover .project-info {
     
     .project-gallery {
         grid-template-columns: 1fr; /* Single column gallery on mobile */
-        padding: 0 20px;
+        padding: 0; /* Remove padding for edge-to-edge images if desired, or keep 20px */
     }
+    
+    /* If gallery items should be full width, uncomment below */
+    /* .project-gallery { padding: 0; gap: 0; } */
     
     .project-header-block {
         padding: 0 20px;
@@ -829,21 +844,19 @@ a.project-card:hover .project-info {
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 20px; /* General padding for text containers */
     }
     
-    .container-fluid {
-        padding: 0;
-    }
-
-    /* Footer Mobile Stack - ONLY here */
+    /* Footer Mobile Stack */
     .footer-container-custom {
         grid-template-columns: 1fr; /* Stack vertically */
         gap: 40px;
     }
     
     .footer-map {
-        height: 300px; /* Smaller map on mobile */
+        height: 300px; 
+        margin-left: -20px; /* Pull map to edge */
+        width: calc(100% + 40px); /* Extend map to full width */
     }
     
     .contact-row-large {
@@ -852,5 +865,9 @@ a.project-card:hover .project-info {
     
     .contact-row {
         font-size: 1rem;
+    }
+    
+    .contacts-form-section .container {
+        padding: 0 20px;
     }
 }
