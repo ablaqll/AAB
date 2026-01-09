@@ -696,6 +696,10 @@ a.project-card:hover .project-info {
         grid-template-columns: 1fr 1.5fr;
         gap: 40px;
     }
+    
+    .project-title-large {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -766,6 +770,17 @@ a.project-card:hover .project-info {
         font-size: 1rem;
     }
     
+    /* About section mobile fix */
+    .about-content {
+        grid-template-columns: 1fr; /* Stack content vertically */
+        gap: 40px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid for stats on mobile */
+        gap: 30px;
+    }
+    
     /* Services grid */
     .services-grid {
         grid-template-columns: 1fr; /* 1 col on mobile */
@@ -795,15 +810,30 @@ a.project-card:hover .project-info {
     }
     
     .project-title-large {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     
     .project-description-text {
         font-size: 1rem;
     }
     
+    .project-gallery {
+        grid-template-columns: 1fr; /* Single column gallery on mobile */
+        padding: 0 20px;
+    }
+    
+    .project-header-block {
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+    
     .container {
         padding: 0 20px;
+    }
+    
+    .container-fluid {
+        padding: 0;
     }
 
     /* Footer Mobile Stack - ONLY here */
@@ -814,5 +844,13 @@ a.project-card:hover .project-info {
     
     .footer-map {
         height: 300px; /* Smaller map on mobile */
+    }
+    
+    .contact-row-large {
+        font-size: 1.5rem;
+    }
+    
+    .contact-row {
+        font-size: 1rem;
     }
 }
