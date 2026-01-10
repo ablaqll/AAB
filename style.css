@@ -704,7 +704,16 @@ a.project-card:hover .project-info {
 
 @media (max-width: 768px) {
     .section-padding {
-        padding: 80px 0;
+        padding: 60px 0; /* Reduced vertical padding */
+    }
+    
+    .section-title {
+        font-size: 2rem; /* Smaller section titles */
+        margin-bottom: 40px;
+    }
+
+    .section-title.text-left {
+        text-align: center; /* Center align all titles on mobile */
     }
     
     .header {
@@ -762,34 +771,57 @@ a.project-card:hover .project-info {
 
     /* Make hero responsive */
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Reduced hero title */
         letter-spacing: 2px;
-        line-height: 1.2; /* Better line height for mobile */
+        line-height: 1.2; 
     }
     
     .hero-content .subtitle {
         font-size: 1rem;
-        padding: 0 10px; /* Slight padding for subtitle */
+        padding: 0 10px; 
     }
     
     /* About section mobile fix */
     .about-content {
         grid-template-columns: 1fr; /* Stack content vertically */
         gap: 40px;
+        width: 100%; /* Ensure fit */
+        text-align: center; /* Center text */
+    }
+    
+    .about-description {
+        text-align: center; /* Explicitly center description */
     }
     
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid for stats on mobile */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 30px;
+        width: 100%;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem; /* Reduced stat number size */
+    }
+
+    .stat-text {
+        font-size: 0.8rem;
     }
     
     /* Services grid */
     .services-grid {
-        grid-template-columns: 1fr; /* 1 col on mobile */
+        grid-template-columns: 1fr; 
     }
     .service-card {
         border-right: none;
-        padding: 40px 20px; /* Reduce padding inside cards */
+        padding: 40px 20px; 
+        align-items: center; /* Center content in cards */
+        text-align: center;
+    }
+    
+    .service-icon {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center; /* Center icon */
     }
     
     /* Reset container padding for full-width look where needed */
@@ -804,7 +836,7 @@ a.project-card:hover .project-info {
     }
     
     #projects .container {
-        padding: 0; /* Ensure projects container is full width */
+        padding: 0; 
     }
 
     .project-info {
@@ -813,30 +845,31 @@ a.project-card:hover .project-info {
     }
     
     .project-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.1rem; /* Smaller project titles on card */
+        text-align: center; /* Center project title */
+        width: 100%;
     }
     
     .project-hero-image {
-        height: 50vh;
-        margin-bottom: 40px;
+        height: 40vh; /* Smaller hero image height */
+        margin-bottom: 30px;
     }
     
     .project-title-large {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Smaller project detail title */
         margin-bottom: 20px;
+        text-align: center;
     }
     
     .project-description-text {
         font-size: 1rem;
+        text-align: center;
     }
     
     .project-gallery {
-        grid-template-columns: 1fr; /* Single column gallery on mobile */
-        padding: 0; /* Remove padding for edge-to-edge images if desired, or keep 20px */
+        grid-template-columns: 1fr; 
+        padding: 0; 
     }
-    
-    /* If gallery items should be full width, uncomment below */
-    /* .project-gallery { padding: 0; gap: 0; } */
     
     .project-header-block {
         padding: 0 20px;
@@ -844,19 +877,37 @@ a.project-card:hover .project-info {
     }
     
     .container {
-        padding: 0 20px; /* General padding for text containers */
+        padding: 0 20px; 
     }
     
+    /* Contacts Header Mobile */
+    .contacts-header {
+        text-align: center;
+    }
+    
+    .contacts-header h2 {
+        font-size: 1.8rem; /* Smaller contact header */
+    }
+    
+    .contacts-header p {
+        margin: 0 auto;
+    }
+
     /* Footer Mobile Stack */
     .footer-container-custom {
-        grid-template-columns: 1fr; /* Stack vertically */
+        grid-template-columns: 1fr; 
         gap: 40px;
+        text-align: center; /* Center footer text */
+    }
+    
+    .footer-left {
+        align-items: center;
     }
     
     .footer-map {
         height: 300px; 
-        margin-left: -20px; /* Pull map to edge */
-        width: calc(100% + 40px); /* Extend map to full width */
+        margin-left: -20px; 
+        width: calc(100% + 40px); 
     }
     
     .contact-row-large {
